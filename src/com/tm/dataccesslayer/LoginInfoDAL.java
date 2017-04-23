@@ -1,28 +1,31 @@
 package com.tm.dataccesslayer;
+import java.io.FileWriter;
 import java.sql.*;
-
-import com.tm.entity.LoginInfo;
+import com.dbconnection.*;
 
 public class LoginInfoDAL
 
 {
 	Connection con;
 	
-public boolean getLoginInfo(String username, String password) throws Exception
+public int getLoginInfo(String username, String password) throws Exception
 {
-	Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-	con=DriverManager.getConnection("jdbc:sqlserver://localhost\\sqlexpress:1434;databaseName=TransportManagement;integratedSecurity=true");
-	Statement st=con.createStatement();
-	ResultSet rs=st.executeQuery("insert into tbl_UserLoginInfo values"+"("+"'piyush',"+"'piyush'"+")"+"");
+
+	DBConnect dc=DBConnect.getDBInstance();	
+	con=dc.getConnection();
 	
-	return con.isClosed();
-	
+	CallableStatement cst=con.prepareCall("{?=call ValidateLogin(?,?) }");
+	cst.registerOutParameter(1,java.sql.Types.INTEGER);
+	cst.setString(2,username);
+	cst.setString(3,password);	
+	cst.execute();	
+	int i=cst.getInt(1);
+	System.out.print(i);
+	dc.closeConnection(con);
+	return i;
+
 }
 
-public void insertInfo(String name,String empid,String password,String projectid,String Location,String currentoffice)
-{
-	
-}
 
 
 

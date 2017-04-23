@@ -14,6 +14,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="E:/sqljdbc_6.0/enu/jre7/sqljdbc41.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/sqljdbc_6.0/enu/jre7/sqljdbc41.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

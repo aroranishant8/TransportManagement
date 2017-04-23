@@ -13,14 +13,16 @@
 		
 	</form>
 <form action="Register" method="post">
-<h6>Name</h6><input type="text" name="name" ><br>
-<h6>EmpId</h6><input type="text" name="empid"><br>
-<h6>ProjectId</h6><input type="text" name="projectid"><br>
-<h6>Password</h6><input type="password" name="password"><br>
-<h6>Location</h6><input type="text" name="location"><br>
-<select name="currentoffice">
+<h6>UserId</h6><input type="text" name="UserId" ><br>
+<h6>Fname</h6><input type="text" name="Fname"><br>
+<h6>Lname</h6><input type="text" name="Lname"><br>
+<h6>ContactNo</h6><input type="password" name="ContactNo"><br>
+<h6>DealerId</h6><input type="text" name="DealerId"><br>
+<h6>Password</h6><input type="password" name="Password"><br>
+<select ">
 <option value="CTS">C.T.S</option>
-</select>
+</select><br>
+
 <input type="submit" value="Register">
 </form>
 </body>
